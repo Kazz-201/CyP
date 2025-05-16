@@ -1,0 +1,5 @@
+body { background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%); min-height: 100vh; }
+        .modal-header { background: #6366f1; color: #fff; }
+        .btn-primary { background: #6366f1; border: none; }
+        .btn-primary:hover { background: #4f46e5; }
+        .table thead { background: #6366f1; color: #fff; }
