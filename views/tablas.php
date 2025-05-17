@@ -21,10 +21,10 @@ $proveedores = $conn->query("SELECT * FROM proveedor");
         </div>
     </div>
     <div class="row">
-        <div class="col-md-6 mb-4">
+        <div class="col-12 col-lg-6 mb-4">
             <div class="card shadow">
                 <div class="card-header bg-primary text-white">Clientes</div>
-                <div class="card-body">
+                <div class="card-body table-responsive">
                     <table class="table table-hover align-middle">
                         <thead>
                             <tr>
@@ -55,10 +55,10 @@ $proveedores = $conn->query("SELECT * FROM proveedor");
                 </div>
             </div>
         </div>
-        <div class="col-md-6 mb-4">
+        <div class="col-12 col-lg-6 mb-4">
             <div class="card shadow">
                 <div class="card-header bg-success text-white">Proveedores</div>
-                <div class="card-body">
+                <div class="card-body table-responsive">
                     <table class="table table-hover align-middle">
                         <thead>
                             <tr>
