@@ -7,12 +7,12 @@ $conn = $conn->Conectar();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($_POST['tipo'] == 'cliente') {
         $id = $_POST['id'];
-        $stmt = $conn->prepare("DELETE FROM cliente WHERE id_cliente = ?");
+        $stmt = $conn->prepare("DELETE FROM Clientes WHERE ID_Cliente = ?");
         $stmt->execute([$id]);
         echo "ok";
     } elseif ($_POST['tipo'] == 'proveedor') {
         $id = $_POST['id'];
-        $stmt = $conn->prepare("DELETE FROM proveedor WHERE cod_proveedor = ?");
+        $stmt = $conn->prepare("DELETE FROM Proveedores WHERE ID_Proveedor = ?");
         $stmt->execute([$id]);
         echo "ok";
     } else {

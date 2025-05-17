@@ -9,8 +9,8 @@ $conn = new Conexion();
 $conn = $conn->Conectar();
 
 // Obtener datos
-$clientes = $conn->query("SELECT * FROM cliente");
-$proveedores = $conn->query("SELECT * FROM proveedor");
+$clientes = $conn->query("SELECT * FROM Clientes");
+$proveedores = $conn->query("SELECT * FROM Proveedores");
 ?>
 
 <!DOCTYPE html>
@@ -40,16 +40,16 @@ $proveedores = $conn->query("SELECT * FROM proveedor");
           <input type="hidden" name="tipo" value="cliente">
           <div class="modal-body">
                 <div class="mb-3">
-                    <label class="form-label">Rut</label>
-                    <input type="text" name="rutcliente" class="form-control" required>
-                </div>
-                <div class="mb-3">
                     <label class="form-label">Nombre</label>
                     <input type="text" name="nomcliente" class="form-control" required>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label">Teléfono</label>
+                    <label class="form-label">Telefono</label>
                     <input type="text" name="fonocliente" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">E-Mail</label>
+                    <input type="text" name="mailcliente" class="form-control" required>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Dirección</label>
@@ -85,12 +85,12 @@ $proveedores = $conn->query("SELECT * FROM proveedor");
                   <input type="text" name="nomcontacto" class="form-control" required>
               </div>
                 <div class="mb-3">
-                    <label class="form-label">Teléfono</label>
-                    <input type="text" name="fonoproveedor" class="form-control" required>
+                    <label class="form-label">Direccion</label>
+                    <input type="text" name="direproveedor" class="form-control" required>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label">Dirección</label>
-                    <input type="text" name="direproveedor" class="form-control" required>
+                    <label class="form-label">Ciudad</label>
+                    <input type="text" name="cityproveedor" class="form-control" required>
                 </div>
           </div>
           <div class="modal-footer">

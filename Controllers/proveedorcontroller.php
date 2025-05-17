@@ -3,7 +3,7 @@
 Class ctrProveedor{
 
     public function ctrSaveProveedor($data){
-        $table = "proveedor";
+        $table = "Proveedores";
         $respuesta = (new mdlProveedor)->mdlSaveProveedor($table, $data);
         return $respuesta;
     }

@@ -4,8 +4,8 @@ require_once __DIR__ . '/../models/conexion.php';
 $conn = new Conexion();
 $conn = $conn->Conectar();
 
-$clientes = $conn->query("SELECT * FROM cliente");
-$proveedores = $conn->query("SELECT * FROM proveedor");
+$clientes = $conn->query("SELECT * FROM Clientes");
+$proveedores = $conn->query("SELECT * FROM Proveedores");
 ?>
 
 <div class="container py-5">
@@ -38,13 +38,13 @@ $proveedores = $conn->query("SELECT * FROM proveedor");
                         <tbody>
                             <?php while($row = $clientes->fetch(PDO::FETCH_ASSOC)): ?>
                             <tr>
-                                <td ><?= $row['id_cliente']  ?></td>
-                                <td><?= $row['rut'] ?></td>
-                                <td><?= $row['nombre'] ?></td>
-                                <td><?= $row['telefono'] ?></td>
-                                <td><?= $row['direccion'] ?></td>
+                                <td ><?= $row['ID_Cliente']  ?></td>
+                                <td><?= $row['Nombre_Cliente'] ?></td>
+                                <td><?= $row['Telefono'] ?></td>
+                                <td><?= $row['Correo_Electronico'] ?></td>
+                                <td><?= $row['Direccion'] ?></td>
                                 <td>
-                                <button class="btn btn-danger btn-sm eliminar-cliente" data-id="<?= $row['id_cliente'] ?>">
+                                <button class="btn btn-danger btn-sm eliminar-cliente" data-id="<?= $row['ID_Cliente'] ?>">
                                 <i class="bi bi-trash"></i> Eliminar
                                 </button>
                                 </td>
@@ -72,13 +72,13 @@ $proveedores = $conn->query("SELECT * FROM proveedor");
                         <tbody>
                             <?php while($row = $proveedores->fetch(PDO::FETCH_ASSOC)): ?>
                             <tr>
-                                <td><?= $row['cod_proveedor'] ?></td>
-                                <td><?= $row['nom_proveedor'] ?></td>
-                                <td><?= $row['nom_contacto'] ?></td>
-                                <td><?= $row['telefono'] ?></td>
-                                <td><?= $row['direccion'] ?></td>
+                                <td><?= $row['ID_Proveedor'] ?></td>
+                                <td><?= $row['Nombre_Proveedor'] ?></td>
+                                <td><?= $row['Contacto'] ?></td>
+                                <td><?= $row['Direccion'] ?></td>
+                                <td><?= $row['Ciudad'] ?></td>
                                 <td>
-                                <button class="btn btn-danger btn-sm eliminar-proveedor" data-id="<?= $row['cod_proveedor'] ?>">
+                                <button class="btn btn-danger btn-sm eliminar-proveedor" data-id="<?= $row['ID_Proveedor'] ?>">
                                 <i class="bi bi-trash"></i> Eliminar
                                 </button>
                                 </td>        
