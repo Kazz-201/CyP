@@ -4,7 +4,6 @@ require_once __DIR__ . '/../models/conexion.php';
 $conn = new Conexion();
 $conn = $conn->Conectar();
 
-$clientes = $conn->query("SELECT * FROM Clientes");
 $proveedores = $conn->query("SELECT * FROM Proveedores");
 ?>
 
@@ -12,61 +11,13 @@ $proveedores = $conn->query("SELECT * FROM Proveedores");
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h1 class="fw-bold text-primary">Clientes</h1>
         <div>
-            <button class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#modalCliente">
-                <i class="bi bi-person-plus"></i> Agregar Cliente
             </button>
             <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalProveedor">
                 <i class="bi bi-truck"></i> Agregar Proveedor
             </button>
         </div>
     </div>
-    <div class="row">
-        <div class="col-12 col-lg-6 mb-4">
-            <div class="card shadow">
-                <div class="card-header bg-primary text-white">Clientes</div>
-                <div class="card-body table-responsive">
-                    <table id="tablaClientes" class="table table-hover align-middle">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Nombre</th>
-                                <th>Telefono</th>
-                                <th>E-Mail</th>
-                                <th>Direccion</th>
-                                <th>Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php while($row = $clientes->fetch(PDO::FETCH_ASSOC)): ?>
-                            <tr>
-                                <td><?= $row['ID_Cliente']  ?></td>
-                                <td><?= $row['Nombre_Cliente'] ?></td>
-                                <td><?= $row['Telefono'] ?></td>
-                                <td><?= $row['Correo_Electronico'] ?></td>
-                                <td><?= $row['Direccion'] ?></td>
-                                <td>
-                                    <!-- Botones de acción aquí -->
-                                    <button class="btn btn-warning btn-sm mb-2 btn-editar-cliente"
-                                      data-id="<?= $row['ID_Cliente'] ?>"
-                                      data-nombre="<?= htmlspecialchars($row['Nombre_Cliente']) ?>"
-                                      data-telefono="<?= htmlspecialchars($row['Telefono']) ?>"
-                                      data-correo="<?= htmlspecialchars($row['Correo_Electronico']) ?>"
-                                      data-direccion="<?= htmlspecialchars($row['Direccion']) ?>"
-                                    >
-                                      <i class="bi bi-pencil"></i> Editar
-                                    </button>
-                                    <button class="btn btn-danger btn-sm eliminar-cliente" data-id="<?= $row['ID_Cliente'] ?>">
-                                    <i class="bi bi-trash"></i> Eliminar
-                                    </button>
-                                </td>
-                            </tr>
-                            <?php endwhile; ?>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-lg-6 mb-4">
+    <div class="col-12 col-lg-6 mb-4">
             <div class="card shadow">
                 <div class="card-header bg-success text-white">Proveedores</div>
                 <div class="card-body table-responsive">
@@ -114,32 +65,32 @@ $proveedores = $conn->query("SELECT * FROM Proveedores");
     </div>
 </div>
 
-<!-- Modal para editar cliente -->
-<div class="modal fade" id="modalEditarCliente" tabindex="-1" aria-labelledby="modalEditarClienteLabel" aria-hidden="true">
+<!-- Modal para editar proveedores -->
+<div class="modal fade" id="modalEditarProveedor" tabindex="-1" aria-labelledby="modalEditarProveedorLabel" aria-hidden="true">
   <div class="modal-dialog">
-    <form id="formEditarCliente">
+    <form id="formEditarProveedor">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="modalEditarClienteLabel">Editar Cliente</h5>
+          <h5 class="modal-title" id="modalEditarProveedorLabel">Editar Proveedor</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
         </div>
         <div class="modal-body">
-          <input type="hidden" id="editClienteId" name="id">
+          <input type="hidden" id="editProveedorId" name="id_proveedor">
           <div class="mb-3">
-            <label for="editNombre" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="editNombre" name="nombre" required>
+            <label for="editProveedorNombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="editProveedorNombre" name="nombre_proveedor" required>
           </div>
           <div class="mb-3">
-            <label for="editTelefono" class="form-label">Teléfono</label>
-            <input type="text" class="form-control" id="editTelefono" name="telefono" required>
+            <label for="editProveedorContacto" class="form-label">Contacto</label>
+            <input type="text" class="form-control" id="editProveedorContacto" name="contacto_proveedor" required>
           </div>
           <div class="mb-3">
-            <label for="editCorreo" class="form-label">E-Mail</label>
-            <input type="email" class="form-control" id="editCorreo" name="correo" required>
+            <label for="editProveedorDireccion" class="form-label">Direccion</label>
+            <input type="text" class="form-control" id="editProveedorDireccion" name="direccion_proveedor" required>
           </div>
           <div class="mb-3">
-            <label for="editDireccion" class="form-label">Dirección</label>
-            <input type="text" class="form-control" id="editDireccion" name="direccion" required>
+            <label for="editProveedorCiudad" class="form-label">Ciudad</label>
+            <input type="text" class="form-control" id="editProveedorCiudad" name="Ciudad" required>
           </div>
         </div>
         <div class="modal-footer">
