@@ -1,1 +1,1 @@
-# CyP
+# codigo para agregar informacion a las tablas de "clientes y proveedores de Proyecto Amandary"
