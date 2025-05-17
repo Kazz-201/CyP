@@ -16,12 +16,12 @@ $clientes = $conn->query("SELECT * FROM Clientes");
             </button>
         </div>
     </div>
-    <div class="row">
-        <div class="col-12 col-lg-6 mb-4">
+    <div class="row justify-content-center">
+        <div class="col-12 col-lg-10">
             <div class="card shadow">
                 <div class="card-header bg-primary text-white">Clientes</div>
                 <div class="card-body table-responsive">
-                    <table id="tablaClientes" class="table table-hover align-middle">
+                    <table id="tablaClientes" class="table table-hover align-middle w-100">
                         <thead>
                             <tr>
                                 <th>ID</th>
@@ -41,19 +41,20 @@ $clientes = $conn->query("SELECT * FROM Clientes");
                                 <td><?= $row['Correo_Electronico'] ?></td>
                                 <td><?= $row['Direccion'] ?></td>
                                 <td>
-                                    <!-- Botones de acción aquí -->
-                                    <button class="btn btn-warning btn-sm mb-2 btn-editar-cliente"
-                                      data-id="<?= $row['ID_Cliente'] ?>"
-                                      data-nombre="<?= htmlspecialchars($row['Nombre_Cliente']) ?>"
-                                      data-telefono="<?= htmlspecialchars($row['Telefono']) ?>"
-                                      data-correo="<?= htmlspecialchars($row['Correo_Electronico']) ?>"
-                                      data-direccion="<?= htmlspecialchars($row['Direccion']) ?>"
-                                    >
-                                      <i class="bi bi-pencil"></i> Editar
-                                    </button>
-                                    <button class="btn btn-danger btn-sm eliminar-cliente" data-id="<?= $row['ID_Cliente'] ?>">
-                                    <i class="bi bi-trash"></i> Eliminar
-                                    </button>
+                                  <div class="d-flex gap-2 align-items-center">
+                                      <button class="btn btn-warning btn-sm btn-editar-cliente"
+                                        data-id="<?= $row['ID_Cliente'] ?>"
+                                        data-nombre="<?= htmlspecialchars($row['Nombre_Cliente']) ?>"
+                                        data-telefono="<?= htmlspecialchars($row['Telefono']) ?>"
+                                        data-correo="<?= htmlspecialchars($row['Correo_Electronico']) ?>"
+                                        data-direccion="<?= htmlspecialchars($row['Direccion']) ?>"
+                                      >
+                                        <i class="bi bi-pencil"></i> Editar
+                                      </button>
+                                      <button class="btn btn-danger btn-sm eliminar-cliente" data-id="<?= $row['ID_Cliente'] ?>">
+                                        <i class="bi bi-trash"></i> Eliminar
+                                      </button>
+                                  </div>
                                 </td>
                             </tr>
                             <?php endwhile; ?>

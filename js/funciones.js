@@ -9,11 +9,18 @@ $(document).ready(function() {
         );
     }
 
+    // Detecta la vista activa leyendo el parámetro 'vista' de la URL
+    function getVistaActual() {
+        const params = new URLSearchParams(window.location.search);
+        return params.get('vista') || 'clientes';
+    }
+
     // Función para recargar solo las tablas
     window.recargarTablas = function() {
-        $('#contenedor-tablas').load('views/tablas.php', function() {
+        let vista = getVistaActual();
+        let archivo = vista === 'proveedores' ? 'views/tabla_proveedores.php' : 'views/tabla_clientes.php';
+        $('#contenedor-tablas').load(archivo, function() {
             inicializarDataTables();
-            // Reasigna eventos si es necesario
         });
     }
 

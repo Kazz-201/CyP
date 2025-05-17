@@ -47,11 +47,15 @@ $vista = $_GET['vista'] ?? 'clientes'; // Por defecto muestra clientes
 </nav>
 
 <div class="container">
-    <?php if ($vista === 'clientes'): ?>
-        <?php include 'views/tabla_clientes.php'; ?>
-    <?php elseif ($vista === 'proveedores'): ?>
-        <?php include 'views/tabla_proveedores.php'; ?>
-    <?php endif; ?>
+    <div id="contenedor-tablas">
+    <?php
+      if ($vista === 'clientes') {
+        include 'views/tabla_clientes.php';
+      } else {
+        include 'views/tabla_proveedores.php';
+      }
+    ?>
+    </div>
 </div>
 
 <div id="alerta" class="container mt-3"></div>
