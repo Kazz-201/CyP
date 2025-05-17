@@ -1,7 +1,6 @@
-
 <?php
 // Conexión a la base de datos
-require_once 'models/conexion.php';
+require_once __DIR__ . '/../models/conexion.php';
 $conn = new Conexion();
 $conn = $conn->Conectar();
 

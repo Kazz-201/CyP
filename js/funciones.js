@@ -11,8 +11,7 @@ $(document).ready(function() {
 
     // Función para recargar solo las tablas
     window.recargarTablas = function() {
-        $('#contenedor-tablas').load('tablas.php', function() {
-            // Opcional: puedes poner aquí código que necesite ejecutarse después de recargar la tabla
+        $('#contenedor-tablas').load('views/tablas.php', function() {
         });
     }
 
