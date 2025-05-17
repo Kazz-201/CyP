@@ -1,4 +1,5 @@
 <?php
+// Este archivo procesa la información del formulario de cliente y la envía al controlador para su almacenamiento en la base de datos
 require_once '../models/conexion.php';
 $conn = new Conexion();
 $conn = $conn->Conectar();
