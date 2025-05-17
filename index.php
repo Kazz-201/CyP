@@ -18,12 +18,22 @@ $proveedores = $conn->query("SELECT * FROM Proveedores");
 <head>
     <meta charset="UTF-8">
     <title>Clientes y Proveedores</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS (si no lo tienes) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- DataTables JS -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+<script src="js/funciones.js"></script>
 </head>
 <body>
 
 <div id="contenedor-tablas">
     <?php include 'views/tablas.php'; ?>
+    <script src="js/funciones.js"></script>
 </div>
 
 <div id="alerta" class="container mt-3"></div>
@@ -104,7 +114,5 @@ $proveedores = $conn->query("SELECT * FROM Proveedores");
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="js/funciones.js"></script>
 </body>
 </html>
